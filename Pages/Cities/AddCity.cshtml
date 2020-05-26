@@ -1,0 +1,52 @@
+﻿@page
+@model EgetTest04.Pages.Cities.AddCityModel
+@{
+    ViewData["Title"] = "AddCity";
+}
+
+<h1>Add a City</h1>
+<h3>Country: @Model.Country.Name</h3>
+
+
+<div class="row">
+    <div class="col-md-4">
+        <table class="table table-responsive">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.Label("Existing cities")
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (!(Model.Cities == null))
+                {
+                    @foreach (var item in Model.Cities)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Name)
+                            </td>
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" id="CId" value="CnId">
+
+            <div class="form-group">
+                <label asp-for="InCity.Name" class="control-label"></label>
+                <input asp-for="InCity.Name" class="form-control" />
+                <span asp-validation-for="InCity.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Enter" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
