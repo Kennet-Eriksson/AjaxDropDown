@@ -27,12 +27,3 @@ $(document).ready(function () {
         });
     });
 });
-
-
-/*
-$(document).ready(function () {
-    $("#countrychange").on("change", function () {
-        alert("hej");
-    })
-})
-*/
